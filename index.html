@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Introduction to Twitter bots with Tracery</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+    <link rel="stylesheet" href="lib/css/atom-one-dark-reasonable.css">
+
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <style>
+      /* Columns */
+      .container {
+        display: flex;
+      }
+      .col {
+        flex: 1;
+        /* padding-right: 2em !important; */
+      }
+      /* .col:last-child {
+        padding-right: 0 !important;
+      } */
+      .col-grow {
+        flex-grow: 2;
+      }
+
+      /* Layout */
+      /* .align-left {
+        text-align: left;
+      }
+      .align-right {
+        text-align: right;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>Introduction to Twitter bots with Tracery
+          <p><small>November 22, 2018</small></p>
+        </section>
+        <section>
+          <p>Who are we?</p>
+          <small>
+            <p class="fragment"><strong>Digital Humanities Innovation Lab</strong></p>
+            <p class="fragment">The DHIL provides consultation, training, mentoring, research software development and technical support to SFU faculty and graduate students.</p>
+            &nbsp;<br>
+            <div class="container">
+              <div class="col fragment">
+                <strong>Catherine Winters</strong><br>
+                User Interface Developer, DHIL
+              </div>
+
+              <div class="col fragment">
+                <strong>Hannah Holtzclaw</strong><br>
+                Technical Fellow, DHIL
+                <!-- Todo: pad this out, maybe? -->
+              </div>
+            </div>
+          </small>
+        </section>
+        <section>
+          <p>What do we mean by "Twitter bots"?</p>
+          <small>
+            <div class="container">
+              <div class="col fragment">
+                <p><strong>We <em>don't</em> mean:</strong></p>
+                <ul>
+                  <li class="fragment">"@realperson85175871"</li>
+                  <li class="fragment">Whatever goes on at the<br>Internet Research Agency</li>
+                  <li class="fragment">Whatever goes on at<br>Cambridge Analytica</li>
+                  <li class="fragment">@horse_ebooks</li>
+                  <li class="fragment">Deep Blue</li>
+                  <li class="fragment">That 'teenage girl' bot Microsoft made that turned into a Nazi</li>
+                  <li class="fragment">"We forced a bot to watch 1000 hours of <em>Star Trek</em>..."</li>
+                  <li class="fragment">Siri, but like, on Twitter</li>
+                  <li class="fragment">Spam?</li>
+                </ul>
+              </div>
+              <div class="col fragment">
+                <p><strong>We <em>do</em> mean:</strong></p>
+                <ul>
+                  <li class="fragment">Something that tweets facts from a list</li>
+                  <li class="fragment">Something that generates a narrative</li>
+                  <li class="fragment">Something that generates parametric art</li>
+                  <li class="fragment">Something fun or interesting that people follow to break up their Twitter feed</li>
+                </ul>
+              </div>
+            </div>
+          </small>
+        </section>
+        <section>
+          <p>Examples of Twitter bots</p>
+          <p class="fragment"><a href="https://twitter.com/infinite_scream" target="_blank">@infinite_scream</a></p>
+          <p class="fragment"><a href="https://twitter.com/TaySEliot" target="_blank">@TaySEliot</a></p>
+          <p class="fragment"><a href="https://twitter.com/HouseBudgets" target="_blank">@HouseBudgets</a></p>
+          <p class="fragment"><a href="https://twitter.com/thinkpiecebot" target="_blank">@thinkpiecebot</a></p>
+          <p class="fragment"><a href="https://twitter.com/tinycarebot" target="_blank">@tinycarebot</a></p>
+          <p class="fragment"><a href="https://twitter.com/tiny_star_field" target="_blank">@tiny_star_field</a></p>
+          <!-- Todo: Post screenshots here -->
+        </section>
+        <section>
+          <p>Why would I want a Twitter bot?</p>
+          <small>
+            <ul>
+              <li class="fragment">Get attention for your research</li>
+              <li class="fragment">Tell a story</li>
+              <li class="fragment">Educate your followers</li>
+              <li class="fragment">Learn technical skills that you can apply to other projects</li>
+              <li class="fragment">Have fun making a thing</li>
+              <li class="fragment"><span class="fragment strike">Overthrow democracy</span> <span class="fragment">(Please don't.)</span></li>
+            </ul>
+          </small>
+        </section>
+        <section>
+          <p>Tracery</p>
+          <!-- Todo: Don't google her here; there's someone with the same name whose sites aren't work-safe! -->
+          <small>
+            <p>Created by <strong>Kate Compton</strong><br>
+            PhD candidate at UC Santa Cruz</p>
+
+            <p>Twitter: <a href="http://twitter.com/GalaxyKate" target="_blank">@GalaxyKate</a><br>
+            GitHub: <a href="https://github.com/galaxykate/tracery" target="_blank">github.com/galaxykate/tracery</a></p>
+          </small>
+        </section>
+
+        <section><p>What <em>is</em> Tracery?</p>
+          <small>
+            <p class="fragment"><q>A grammar-based generation library for JavaScript.</q><br>
+              <span class="align-right">&mdash; Kate Compton, creator of Tracery</span></p>
+            <p class="fragment"><span class="fragment strike"<q>A computer thing that's kind of like madlibs.</q><br>
+              <span class="align-right">&mdash; Catherine</span></span></p>
+            <p class="fragment"><q>Tracery is a super-simple tool and language to generate text<br>[...]<br>It's been used by middle school students, humanities professors, indie game developers, professional bot makers, and lots of regular people, too.</q><br>
+              <span class="align-right">&mdash; Kate Compton, on <a href="http://tracery.io/" target="_blank">tracery.io</a></span></p>
+          </small>
+        </section>
+
+        <section>
+          <p>How does Tracery work?</p>
+          <div class="container">
+            <div class="col col-grow">
+              <pre><code class="json" data-trim contenteditable style="font-size: 18px;">
+                {
+                  "origin": [
+                    "#name# went to the store."
+                  ],
+                  "name": [
+                    "Catherine", "Hannah"
+                  ]
+                }
+              </code></pre>
+            </div>
+            <div class="col">
+              <small>
+                <p><strong>Example output:</strong></p>
+                <ul>
+                  <li>"Catherine went to the store."</li>
+                  <li>"Hannah went to the store."</li>
+                </ul>
+                </small>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p>How does Tracery work? (Part 2)</p>
+          <div class="container">
+            <div class="col col-grow">
+              <pre><code class="json" data-trim contenteditable style="font-size: 18px;">
+                {
+                  "origin": [
+                    "#one_or_two_people# went to the store."
+                  ],
+                  "one_or_two_people": [
+                    "#name1#", "#name2#", "#name1# and #name2#"
+                  ],
+                  "name1": [
+                    "Catherine", "Michael"
+                  ],
+                  "name2": [
+                    "Hannah", "Rebecca"
+                  ]
+                }
+              </code></pre>
+            </div>
+            <div class="col">
+              <small>
+                <p><strong>Example output:</strong></p>
+                <ul>
+                  <li>"Hannah went to the store."</li>
+                  <li>"Michael and Hannah went to the store."</li>
+                  <li>"Catherine and Rebecca went to the store."</li>
+                  <li>"Michael went to the store."</li>
+                  <li>"Catherine and Hannah went to the store."</li>
+                </ul>
+                </small>
+            </div>
+          </div>
+        </section>
+
+        <section>Tools
+
+
+          Hosting for your Twitter bot:
+          Cheap Bots Done Quick by George Buckenham
+          https://cheapbotsdonequick.com/
+
+          Or Glitch, which is what we'll be using today.
+          https://glitch.com/~tracery-twitter-bot
+
+
+          Where to test your Tracery grammar:
+          http://www.brightspiral.com/tracery/
+
+          Tools
+          ———
+          Atom
+              - a free code editor made by Github. (You can use any code editor or IDE you prefer.)
+
+          grep
+              - a MacOS/Linux/UNIX command-line program that
+
+          sed
+              - a MacOS/Linux/UNIX command-line program
+
+          There are Windows alternatives for both of these, but if you’re running Windows and want to do it the UNIX way, you can get the Windows Subsystem for Linux and run common command-line programs like grep and sed using Windows.
+
+          Another option is to NOT scrape text using these tools and just do it by hand. If you’re dealing with a short amount of source material, this might actually be more straightforward and less time-consuming.
+
+
+        </section>
+        <section>What you'll be making</section>
+        <section>
+          Catherine's Tips for good Tracerying:
+          —————————————————
+          1. I always use singular names when naming symbols. That way, the output is always grammatically correct when I'm writiing a sentence that references those symbols: "#name# went to the #place#" as opposed to "#names# went to the #places#". But that's me, personally. Consistency is what's important. Find what works for you and stick to it.
+
+
+          2. Leave comments for yourself!
+
+          Most programming and markup languages have "comments", annotations that the computer ignores and which let programmers leave notes for themselves and others, frequently used to explain what a certain piece of code is doing.
+
+          Many programmers will "comment out" code while they're testing, meaning the code still exists, it's just disabled. Because JSON isn't a programming language, it's a data format, you can't do that.
+
+          But in Tracery, the only symbols that Tracery does anything with are ones mentioned in a symbol that gets called by "origin". That means you can add new symbols like this:
+            "comment_fact_fragment": ["These are sentences that would usually follow one of the above: 'It is a heckin' good pupper."],
+
+
+          3. If you're working on your grammar but don't want to edit the whole file at once, add a few symbols like "origin2" and "origin3". They won't get called, but by naming them that, you'll reemember where you are:
+
+
+          4. Are you tired of your bot turning "#name#" and #name# went to the #place#" turning into "Catherine and Catherine went to the store"? Even if you add hundreds of items to "name", it can still happen!
+
+          To avoid, how about splitting #name# into two lists to prevent duplicates? "#name1# and #name2# went to the #place#"?
+
+          If you have a sentence that only calls for one name, you can call a new symbol named  something like #any_name#, and in turn, let it choose from either name1 or name2:
+
+          "any_name": ["#name1#", "#name2#"],
+
+
+          5. A useful tool when editing Tracery files in Atom is the "highlight-selected" package. This allows you to double-click any word and see every instance of that word highlighted in your code.
+
+
+        </section>
+        <section>Where to get data
+
+          Someone to get interesting text from:
+          Darius Kazemi
+          @tinysubversions
+          https://github.com/dariusk/corpora
+
+        </section>
+        <section>Questions?</section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        history: true,
+
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
