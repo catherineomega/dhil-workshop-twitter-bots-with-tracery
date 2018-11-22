@@ -262,6 +262,62 @@
           </div>
         </section>
 
+        <!-- <section>
+          <p>How does Tracery work? (Part 3)</p>
+          <div class="container">
+            <div class="col col-grow">
+              <style>
+                code.small {
+                  font-size: 12px !important;
+                  line-height: 1.2em;
+                }
+              </style>
+              <pre><code class="json small" data-trim contenteditable style="font-size: 18px;">
+                {
+                  "name": [
+                    "Cheri", "Fox", "Morgana", "Jedoo", "Brick", "Shadow", "Krox", "Urga", "Zelph"
+                  ],
+                  "story": [
+                    "#hero.capitalize# was a great #occupation#, and this song tells of #heroTheir# adventure.
+                     #hero.capitalize# #didStuff#, then #heroThey# #didStuff#, then #heroThey# went home to read a book."
+                  ],
+                  "monster": ["dragon", "ogre", "witch", "wizard", "goblin", "golem", "giant", "sphinx", "warlord"],
+                  "setPronouns": [
+                    "[heroThey:they][heroThem:them][heroTheir:their][heroTheirs:theirs]",
+                    "[heroThey:she][heroThem:her][heroTheir:her][heroTheirs:hers]",
+                    "[heroThey:he][heroThem:him][heroTheir:his][heroTheirs:his]"
+                  ],
+                  "setOccupation": [
+                    "[occupation:baker][didStuff:baked bread,decorated cupcakes,folded dough,made croissants,iced a cake]",
+                    "[occupation:warrior][didStuff:fought #monster.a#,saved a village from #monster.a#,battled #monster.a#]"
+                  ],
+                  "origin": [
+                    "#[#setPronouns#][#setOccupation#][hero:#name#]story#"
+                  ]
+                }
+              </code></pre>
+
+              Output:
+            </div> -->
+            <!-- <div class="col">
+              <small>
+                <p><strong>Example output:</strong></p>
+                <ul>
+                  <li>"Hannah went to the store."</li>
+                  <li>"Michael and Hannah went to the store."</li>
+                  <li>"Catherine and Rebecca went to the store."</li>
+                  <li>"Michael went to the store."</li>
+                  <li>"Catherine and Hannah went to the store."</li>
+                </ul>
+                </small>
+            </div>
+          </div>
+        </section>-->
+
+
+
+
+
         <section>
           <p><strong>Try it yourself!</strong></p>
             <ol>
@@ -285,6 +341,10 @@
         </section>
 
         <section>
+          <strong>Cool, but so what?</strong>
+        </section>
+
+        <section>
           <p><strong>Questions from Kate Compton's <br><a href="http://galaxykate0.tumblr.com/post/139774965871/so-you-want-to-build-a-generator" target="_blank">"So you want to build a generator..."</a></strong></p>
           <ol>
             <li class="fragment">What are you making?</li>
@@ -294,14 +354,41 @@
         </section>
 
         <section>
+          <strong>What you'll be making</strong>
+          <p class="fragment">(What Catherine made, anyway.)</p>
+          <small class="fragment">(Because she did it the last week of October and forgot when this workshop was scheduled.)</small>
+        </section>
+
+        <section>
+          <img src="images/black_dogs_bot.png">
+        </section>
+
+        <section>
+          <p>Wait, what?</p>
+          <img src="images/black_dogs_wikipedia.png">
+        </section>
+
+        <section>
           <p><strong>Answers...</strong></p>
           <ol>
-            <li class="fragment"><strong>What are you making?</strong><br>A bot that tweets out funny made-up facts about black dogs.</li>
-            <li class="fragment"><strong>What makes a “bad” example of this?</strong><br>If it was boring/unfunny/had too few options, etc.</li>
-            <li class="fragment"><strong>How would a human solve this problem?</strong><br>By writing a long list of non-repetitive, funny tweets and then posting them.</li>
+            <li class="fragment"><strong>What are you making?</strong><br><span class="fragment">A bot that tweets out amusing made-up facts about black dogs.</span></li>
+            <li class="fragment"><strong>What makes a “bad” example of this?</strong><br><span class="fragment">If it was boring, repetitive, wasn't funny, etc.</span></li>
+            <li class="fragment"><strong>How would a human solve this problem?</strong><br><span class="fragment">By writing a long list of non-repetitive, funny tweets and then posting them.</span></li>
           </ol>
         </section>
 
+        <section>
+          <strong>Follow along by downloading these files:</strong>
+          <ol>
+            <li>Go to <a href="https://github.com/catherineomega/black-dogs-bot">github.com/catherineomega/black-dogs-bot</a></li>
+            <li>Click "<em>Clone or Download</em>".</li>
+            <li>Click "<em>Download ZIP</em>".</li>
+            <li>Unzip the file.</li>
+            <li>Open it in Atom.</li>
+          </ol>
+        </section>
+
+        <!--
         <section>Tools
 
 
@@ -333,7 +420,6 @@
 
 
         </section>
-        <section>What you'll be making</section>
         <section>
           Catherine's Tips for good Tracerying:
           —————————————————
@@ -365,15 +451,62 @@
           5. A useful tool when editing Tracery files in Atom is the "highlight-selected" package. This allows you to double-click any word and see every instance of that word highlighted in your code.
 
 
-        </section>
-        <section>Where to get data
+        </section>-->
 
-          Someone to get interesting text from:
-          Darius Kazemi
-          @tinysubversions
-          https://github.com/dariusk/corpora
-
+        <section>
+          <p>Connecting Tracery to Twitter (Option 1)</p>
+          <p>Cheap Bots Done Quick by George Buckenham<br>
+          <a href="https://cheapbotsdonequick.com" target="_blank">cheapbotsdonequick.com</a></p>
         </section>
+
+        <section>
+          <p>Connecting Tracery to Twitter (Option 2)</p>
+          <p>Glitch, "the friendly community where everyone can discover & create the best stuff on the web"<br>
+          <a href="https://glitch.com/~tracery-twitter-bot" target="_blank">glitch.com/~tracery-twitter-bot</a></p>
+        </section>
+
+        <section>
+          <p>Someone to get interesting text from:</p>
+          <p>Darius Kazemi (<a href="https://twitter.com/tinysubversions" target="_blank">@tinysubversions</a>)</p>
+          <p><a href="https://github.com/dariusk/corpora" target="_blank">github.com/dariusk/corpora</a></p>
+        </section>
+
+        <section>
+          <p>What's a corpora?</p>
+          <small><a href="https://github.com/dariusk/corpora/blob/master/data/geography/english_towns_cities.json" target="_blank">english_towns_cities.json</a></small>
+          <pre><code class="json" data-trim contenteditable style="font-size: 18px;">
+            {
+              "description": "Two lists: one for English towns, one for English cities.",
+              "sources": {
+                "towns": "https://en.wikipedia.org/wiki/List_of_towns_in_England",
+                "cities": "https://en.wikipedia.org/wiki/List_of_cities_in_the_United_Kingdom"
+              },
+              "towns": [
+                "Abingdon",
+                "Accrington",
+                "Acle",
+                "Acton",
+                "Adlington",
+                "Alcester",
+                "Aldeburgh",
+                "Aldershot",
+                "Alford",
+                "Alfreton",
+                "Alnwick",
+                "Alsager",
+                "Alston",
+                "Alton",
+                "Altrincham",
+                "Amble",
+                "Ambleside",
+                "Amersham",
+                "Amesbury",
+                "Ampthill",
+                "Andover",
+                "Appleby-in-Westmorland",
+          </code></pre>
+        </section>
+
         <section>Questions?</section>
       </div>
     </div>
