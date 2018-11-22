@@ -115,7 +115,7 @@
           <!-- Todo: Post screenshots here -->
         </section>
         <section>
-          <p>Why would I want a Twitter bot?</p>
+          <p>What can I do with a Twitter bot?</p>
           <small>
             <ul>
               <li class="fragment">Get attention for your research</li>
@@ -151,7 +151,56 @@
         </section>
 
         <section>
-          <p>How does Tracery work?</p>
+          <p>What <em>is</em> Tracery?<br>A developer's perspective:</p>
+          <!-- <div class="container"> -->
+            <small><p>Tracery is a program that loads a JSON file and outputs text based on what it finds inside.</p></small>
+          <!-- </div> -->
+        </section>
+
+        <section>
+          <strong>Glossary</strong>
+          <ol>
+            <li><em>String</em>: in computer terms, any piece of text.</li>
+            <li><em>JSON</em>: a way of organizing a text file to store data.<br>JSON files can contain strings.</li>
+          </ol>
+        </section>
+
+        <section>
+          <strong>Glossary (Tracery-specific)</strong>
+          <ol>
+            <li><strong>Grammar:</strong> a JSON file formatted to work with Tracery.</li>
+            <li><strong>Symbol:</strong> a string followed by a list of rules</li>
+            <li><strong>Rule:</strong> one of the options within a <em>symbol</em></li>
+            <li><strong>Expansion symbol:</strong> a <em>substring</em> within a rule that will be replaced by another <em>symbol</em></li>
+            <li><strong>Origin:</strong> <em>grammars</em> must contain an origin <em>symbol</em></li>
+          </ol>
+        </section>
+
+        <section>
+          <p>How does Tracery work? (Part 1)</p>
+          <div class="container">
+            <div class="col col-grow">
+              <pre><code class="json" data-trim contenteditable style="font-size: 18px;">
+                {
+                  "origin": [
+                    "Catherine went to the store."
+                  ]
+                }
+              </code></pre>
+            </div>
+            <div class="col">
+              <small>
+                <p><strong>Literally the only possible output:</strong></p>
+                <ul>
+                  <li>"Catherine went to the store."</li>
+                </ul>
+                </small>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p>How does Tracery work? (Part 2)</p>
           <div class="container">
             <div class="col col-grow">
               <pre><code class="json" data-trim contenteditable style="font-size: 18px;">
@@ -178,7 +227,7 @@
         </section>
 
         <section>
-          <p>How does Tracery work? (Part 2)</p>
+          <p>How does Tracery work? (Part 3)</p>
           <div class="container">
             <div class="col col-grow">
               <pre><code class="json" data-trim contenteditable style="font-size: 18px;">
@@ -212,6 +261,29 @@
             </div>
           </div>
         </section>
+
+        <section>
+          <p><strong>Try it yourself!</strong></p>
+            <ol>
+              <li class="fragment">Go to <a href="http://www.brightspiral.com/tracery/" target="_blank">brightspiral.com/tracery</a></li>
+              <li class="fragment">Click <strong>"show colors"</strong> to visualize how the output is generated</li>
+              <li class="fragment">Click <strong>"reroll"</strong> to generate other possibilities</li>
+              <li class="fragment">Click <strong>"JSON"</strong> to edit the 'tinygrammar' example</li>
+              <li class="fragment">Try changing or adding phrases in the 'name' or 'occupation' symbol</li>
+            </ol>
+        </section>
+
+        <section>
+          <p><strong>Try it yourself! (Part 2)</strong></p>
+          <ol>
+            <li class="fragment">Install Atom: <a href="https://atom.io" target="_blank">atom.io</a></li>
+            <li class="fragment">Make a new file: <em>File > New File</em></li>
+            <li class="fragment">Turn on JSON syntax highlighting: <em>Edit > Select Grammar > JSON</em></li>
+            <li class="fragment">Go back to <a href="http://www.brightspiral.com/tracery/" target="_blank">brightspiral.com/tracery</a>. Copy the JSON text, paste it into Atom.</li>
+            <li class="fragment">Make changes in Atom, then copy them into <a href="http://www.brightspiral.com/tracery/" target="_blank">brightspiral.com/tracery</a> to test.</li>
+          </ol>
+        </section>
+
         <section>
           <p><strong>Questions from Kate Compton's <br><a href="http://galaxykate0.tumblr.com/post/139774965871/so-you-want-to-build-a-generator" target="_blank">"So you want to build a generator..."</a></strong></p>
           <ol>
@@ -221,14 +293,14 @@
           </ol>
         </section>
 
-        <!-- <section>
+        <section>
           <p><strong>Answers...</strong></p>
           <ol>
-            <li class="fragment"><small>What are you making?</small><br>A bot that tweets out funny made-up facts about black dogs.</li>
-            <li class="fragment">What makes a “bad” example of this?</li>
-            <li class="fragment">How would a human solve this problem?</li>
+            <li class="fragment"><strong>What are you making?</strong><br>A bot that tweets out funny made-up facts about black dogs.</li>
+            <li class="fragment"><strong>What makes a “bad” example of this?</strong><br>If it was boring/unfunny/had too few options, etc.</li>
+            <li class="fragment"><strong>How would a human solve this problem?</strong><br>By writing a long list of non-repetitive, funny tweets and then posting them.</li>
           </ol>
-        </section> -->
+        </section>
 
         <section>Tools
 
